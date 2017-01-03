@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////////////
+// CharDataIter and friends
+//
+// Probably CharDataIter could be replaced by a clever
+// call to map() on the underlying char iterator...
+//
 pub static END_OF_STRING: char = '\0';
 
 #[derive(Debug)]
@@ -7,10 +13,6 @@ pub struct CharData {
     pub char_offset: usize,
 }
 
-/////////////////////////////////////////////////////////
-// Probably CharDataIter could be replaced by a clever
-// call to map() on the underlying char iterator...
-//
 pub struct CharDataIter<'a> {
     char_stream: &'a mut Iterator<Item = char>,
     byte_offset: usize,
